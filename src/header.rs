@@ -141,9 +141,9 @@ impl Header {
     pub fn new_ustar() -> Header {
         let mut header = Header { bytes: [0; 512] };
         {
-            let gnu = header.cast_mut::<UstarHeader>();
-            gnu.magic = *b"ustar\0";
-            gnu.version = *b"00";
+            let ustar = header.cast_mut::<UstarHeader>();
+            ustar.magic = *b"ustar\0";
+            ustar.version = *b"00";
         }
         header
     }
